@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <Button
+        style="@style/button_normal"
+        android:id="@+id/button_menu_main_survey"
+        android:text="@string/button_new_sruvey" 
+        />
+
+
+
+    <Button
+        style="@style/button_normal"
+        android:id="@+id/button_menu_done"
+        android:text="@string/button_menu_done" />
+
+</LinearLayout>

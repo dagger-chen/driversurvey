@@ -1,0 +1,32 @@
+package com.phicomm.android.driversurvey;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+
+public class InputNameAndIdActivity extends Activity {
+
+
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_input_name_id);
+        
+        getActionBar().setDisplayShowHomeEnabled(false);
+        
+        Fragment fragment = new InputNameAndIdFragment();
+        
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(android.R.id.content, fragment);
+        ft.commit();
+        
+    }
+
+}

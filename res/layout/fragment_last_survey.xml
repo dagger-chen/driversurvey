@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView_survey_last_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/last_survey_text"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp" >
+
+        <RadioButton
+            android:id="@+id/radioButton_survey_last_excellent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radiobutton_select_shape"
+            android:text="@string/excellent" />
+
+        <RadioButton
+            android:id="@+id/radioButton_survey_last_good"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/radiobutton_select_shape"
+            android:text="@string/good" />
+
+        <RadioButton
+            android:id="@+id/radioButton_survey_last_bad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/radiobutton_select_shape"
+            android:text="@string/bad" />
+
+        <RadioButton
+            android:id="@+id/radioButton_survey_last_poor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/radiobutton_select_shape"
+            android:text="@string/poor" />
+    </RadioGroup>
+
+    <!-- <Button -->
+    <!-- android:id="@+id/button_last_survey_done" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:text="@string/button_survey_done" -->
+    <!-- /> -->
+
+</LinearLayout>

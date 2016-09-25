@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <EditText
+        style="@style/edittext_normal"
+        android:id="@+id/editText_month_sum_input_driver"
+        android:hint="@string/input_driver_name" />
+
+    <EditText
+        android:inputType="number"
+        android:layout_marginTop="10dp"
+        style="@style/edittext_normal"
+        android:id="@+id/editText_month_sum_input_id"
+        android:hint="@string/input_car_id" />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        style="@style/edittext_normal"
+        android:id="@+id/editText_month_sum_input_month"
+        android:hint="@string/input_month" />
+    
+    <Button 
+        android:layout_marginTop="10dp"
+        style="@style/button_normal"
+        android:id="@+id/button_month_sum_input_done"
+        android:text="@string/button_show_result"
+        />
+
+</LinearLayout>
