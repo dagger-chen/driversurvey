@@ -50,28 +50,28 @@ public class ThisTableSummaryActivity extends Activity {
 
 	private void setText() {
 		textViewAnswer1.setText("司机的问题十统计结果为：“非常满意”"
-				+ MainMenuActivity.answer1_1 + "次，“满意”"
-				+ MainMenuActivity.answer1_2 + "次，“不满意”"
-				+ MainMenuActivity.answer1_3 + "次，“非常不满意”"
-				+ MainMenuActivity.answer1_4 + "次");
-		textViewAnswer2.setText("司机的问题二统计结果为：“是”" + MainMenuActivity.answer2_1
-				+ "次，“否”" + MainMenuActivity.answer2_2 + "次");
-		textViewAnswer3.setText("司机的问题三统计结果为：“是”" + MainMenuActivity.answer3_1
-				+ "次，“否”" + MainMenuActivity.answer3_2 + "次");
-		textViewAnswer4.setText("司机的问题四统计结果为：“是”" + MainMenuActivity.answer4_1
-				+ "次，“否”" + MainMenuActivity.answer4_2 + "次");
-		textViewAnswer5.setText("司机的问题五统计结果为：“是”" + MainMenuActivity.answer5_1
-				+ "次，“否”" + MainMenuActivity.answer5_2 + "次");
-		textViewAnswer6.setText("司机的问题六统计结果为：“是”" + MainMenuActivity.answer6_1
-				+ "次，“否”" + MainMenuActivity.answer6_2 + "次");
-		textViewAnswer7.setText("司机的问题七统计结果为：“是”" + MainMenuActivity.answer7_1
-				+ "次，“否”" + MainMenuActivity.answer7_2 + "次");
-		textViewAnswer8.setText("司机的问题八统计结果为：“是”" + MainMenuActivity.answer8_1
-				+ "次，“否”" + MainMenuActivity.answer8_2 + "次");
-		textViewAnswer9.setText("司机的问题九统计结果为：“是”" + MainMenuActivity.answer9_1
-				+ "次，“否”" + MainMenuActivity.answer9_2 + "次");
-		textViewAnswer10.setText("司机的问题九统计结果为：“是”" + MainMenuActivity.answer10_1
-				+ "次，“否”" + MainMenuActivity.answer10_2 + "次");
+				+ MainMenuActivity.answer1 + "次，“满意”"
+				+ MainMenuActivity.answer1 + "次，“不满意”"
+				+ MainMenuActivity.answer1 + "次，“非常不满意”"
+				+ MainMenuActivity.answer1 + "次");
+		textViewAnswer2.setText("司机的问题二统计结果为：“是”" + MainMenuActivity.answer2
+				+ "次，“否”" + MainMenuActivity.answer2 + "次");
+		textViewAnswer3.setText("司机的问题三统计结果为：“是”" + MainMenuActivity.answer3
+				+ "次，“否”" + MainMenuActivity.answer3 + "次");
+		textViewAnswer4.setText("司机的问题四统计结果为：“是”" + MainMenuActivity.answer4
+				+ "次，“否”" + MainMenuActivity.answer4 + "次");
+		textViewAnswer5.setText("司机的问题五统计结果为：“是”" + MainMenuActivity.answer5
+				+ "次，“否”" + MainMenuActivity.answer5 + "次");
+		textViewAnswer6.setText("司机的问题六统计结果为：“是”" + MainMenuActivity.answer6
+				+ "次，“否”" + MainMenuActivity.answer6 + "次");
+		textViewAnswer7.setText("司机的问题七统计结果为：“是”" + MainMenuActivity.answer7
+				+ "次，“否”" + MainMenuActivity.answer7 + "次");
+		textViewAnswer8.setText("司机的问题八统计结果为：“是”" + MainMenuActivity.answer8
+				+ "次，“否”" + MainMenuActivity.answer8 + "次");
+		textViewAnswer9.setText("司机的问题九统计结果为：“是”" + MainMenuActivity.answer9
+				+ "次，“否”" + MainMenuActivity.answer9 + "次");
+		textViewAnswer10.setText("司机的问题九统计结果为：“是”" + MainMenuActivity.answer10
+				+ "次，“否”" + MainMenuActivity.answer10 + "次");
 	}
 
 

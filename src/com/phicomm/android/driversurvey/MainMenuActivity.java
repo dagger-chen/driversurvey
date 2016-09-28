@@ -7,13 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainMenuActivity extends Activity {
 
-	public static int answer1_1, answer1_2, answer1_3, answer1_4, answer2_1, answer2_2, answer3_1,
-			answer3_2, answer4_1, answer4_2, answer5_1, answer5_2, answer6_1,
-			answer6_2, answer7_1, answer7_2, answer8_1, answer8_2, answer9_1,
-			answer9_2, answer10_1, answer10_2;
+	public static int answer1, answer2, answer3, answer4, answer5, answer6, 
+	answer7, answer8, answer9, answer10;
 
 	private Question mQuestion;
 	private Button buttonNew;
@@ -41,7 +40,7 @@ public class MainMenuActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				mQuestion.refresh();
+				//mQuestion.refresh();
 				SurveyActivity.index = 0;
 				Intent intent = new Intent(MainMenuActivity.this,
 						SurveyActivity.class);
@@ -56,9 +55,12 @@ public class MainMenuActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				Toast.makeText(MainMenuActivity.this, "此问卷已保存,谢谢！", Toast.LENGTH_LONG).show();
 				updateDatabase();
 //				dataRefresh();
-				finish();
+				//finish();
+				Intent intent = new Intent(MainMenuActivity.this, InputNameAndIdActivity.class);
+				startActivity(intent);
 			}
 		});
 
@@ -71,28 +73,18 @@ public class MainMenuActivity extends Activity {
 	}
 	
 	private void dataRefresh() {
-		answer1_1 = 0;
-		answer1_2 = 0;
-		answer1_3 = 0;
-		answer1_4 = 0;
-		answer2_1 = 0;
-		answer2_2 = 0;
-		answer3_1 = 0;
-		answer3_2 = 0;
-		answer4_1 = 0;
-		answer4_2 = 0;
-		answer5_1 = 0;
-		answer5_2 = 0;
-		answer6_1 = 0;
-		answer6_2 = 0;
-		answer7_1 = 0;
-		answer7_2 = 0;
-		answer8_1 = 0;
-		answer8_2 = 0;
-		answer9_1 = 0;
-		answer9_2 = 0;
-		answer10_1 = 0;
-		answer10_2 = 0;
+		answer1 = 0;
+		answer2 = 0;
+		answer3 = 0;
+		answer3 = 0;
+		answer4 = 0;
+		answer5 = 0;
+		answer6 = 0;
+		answer7 = 0;
+		answer8 = 0;
+		answer9 = 0;
+		answer10 = 0;
+
 	}
 
 	private void updateDatabase() {
@@ -112,23 +104,43 @@ public class MainMenuActivity extends Activity {
 		mQuestion = Question.get(this);
 
 		String dateString = "" + year + "-" + month + "-" + day;
-		// String answer1 = mQuestion.getResults().get(0).toString();
-		// String answer2 = mQuestion.getResults().get(1).toString();
-		// String answer3 = mQuestion.getResults().get(2).toString();
-		// String answer4 = mQuestion.getResults().get(3).toString();
-		// String answer5 = mQuestion.getResults().get(4).toString();
-		// String answer6 = mQuestion.getResults().get(5).toString();
-		// String answer7 = mQuestion.getResults().get(6).toString();
-		// String answer8 = mQuestion.getResults().get(7).toString();
-		// String answer9 = mQuestion.getResults().get(8).toString();
-		// String answer10 = mQuestion.getResults().get(9).toString();
+		 String answer1 = mQuestion.getResults().get(0).toString();
+		 if(answer1 == Integer.toString(0)){
+			 mQuestion.getResults().add(1);
+			 SurveyActivity.index++;
+			 mQuestion.getResults().add(1);
+			 SurveyActivity.index++;
+			 mQuestion.getResults().add(1);
+			 SurveyActivity.index++;
+			 mQuestion.getResults().add(1);
+			 SurveyActivity.index++;
+			 mQuestion.getResults().add(1);
+			 SurveyActivity.index++;
+			 mQuestion.getResults().add(1);
+			 SurveyActivity.index++;
+			 mQuestion.getResults().add(1);
+			 SurveyActivity.index++;
+			 mQuestion.getResults().add(1);
+			 SurveyActivity.index++;
+			 mQuestion.getResults().add(1);
+			 SurveyActivity.index++;			 
+		 }
+		 String answer2 = mQuestion.getResults().get(1).toString();
+		 String answer3 = mQuestion.getResults().get(2).toString();
+		 String answer4 = mQuestion.getResults().get(3).toString();
+		 String answer5 = mQuestion.getResults().get(4).toString();
+		 String answer6 = mQuestion.getResults().get(5).toString();
+		 String answer7 = mQuestion.getResults().get(6).toString();
+		 String answer8 = mQuestion.getResults().get(7).toString();
+		 String answer9 = mQuestion.getResults().get(8).toString();
+		 String answer10 = mQuestion.getResults().get(9).toString();
 
-		surveyDao.add(dateString, carId, driverName, answer1_1 + "", answer1_2
-				+ "",answer1_3 + "", answer1_4 + "", answer2_1 + "", answer2_2 + "", answer3_1 + "", answer3_2
-				+ "", answer4_1 + "", answer4_2 + "", answer5_1 + "", answer5_2
-				+ "", answer6_1 + "", answer6_2 + "", answer7_1 + "", answer7_2
-				+ "", answer8_1 + "", answer8_2 + "", answer9_1 + "", answer9_2
-				+ "", answer10_1 + "", answer10_2 + "");
+		surveyDao.add(dateString, carId, driverName, answer1
+				+ "", answer2 + "", answer3
+				+ "", answer4 + "", answer5
+				+ "", answer6 + "", answer7
+				+ "", answer8 + "", answer9
+				+ "", answer10 + "");
 
 	}
 }

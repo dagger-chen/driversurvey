@@ -143,60 +143,44 @@ public class SurveyFragment extends Fragment {
 	
 	private void summitData() {
 		if (mQuestion.getResults().get(0).toString().equals("0")) {
-			MainMenuActivity.answer1_1++;
-		} else if (mQuestion.getResults().get(0).toString().equals("1")) {
-			MainMenuActivity.answer1_2++;
-		} else if (mQuestion.getResults().get(0).toString().equals("2")) {
-			MainMenuActivity.answer1_3++;
-		} else if (mQuestion.getResults().get(0).toString().equals("3")) {
-			MainMenuActivity.answer1_4++;
-		}
+			MainMenuActivity.answer1++;
+		} 
 		
 		if (mQuestion.getResults().get(1).toString().equals("0")) {
-			MainMenuActivity.answer2_2++;
-		} else {
-			MainMenuActivity.answer2_1++;
+			MainMenuActivity.answer2++;
 		}
+		
 		if (mQuestion.getResults().get(2).toString().equals("0")) {
-			MainMenuActivity.answer3_2++;
-		} else {
-			MainMenuActivity.answer3_1++;
-		}
+			MainMenuActivity.answer3++;
+		} 
+		
 		if (mQuestion.getResults().get(3).toString().equals("0")) {
-			MainMenuActivity.answer4_2++;
-		} else {
-			MainMenuActivity.answer4_1++;
-		}
+			MainMenuActivity.answer4++;
+		} 
+		
 		if (mQuestion.getResults().get(4).toString().equals("0")) {
-			MainMenuActivity.answer5_2++;
-		} else {
-			MainMenuActivity.answer5_1++;
+			MainMenuActivity.answer5++;
 		}
+		
 		if (mQuestion.getResults().get(5).toString().equals("0")) {
-			MainMenuActivity.answer6_2++;
-		} else {
-			MainMenuActivity.answer6_1++;
-		}
+			MainMenuActivity.answer6++;
+		} 
+		
 		if (mQuestion.getResults().get(6).toString().equals("0")) {
-			MainMenuActivity.answer7_2++;
-		} else {
-			MainMenuActivity.answer7_1++;
+			MainMenuActivity.answer7++;
 		}
+		
 		if (mQuestion.getResults().get(7).toString().equals("0")) {
-			MainMenuActivity.answer8_2++;
-		} else {
-			MainMenuActivity.answer8_1++;
+			MainMenuActivity.answer8++;
 		}
+		
 		if (mQuestion.getResults().get(8).toString().equals("0")) {
-			MainMenuActivity.answer9_2++;
-		} else {
-			MainMenuActivity.answer9_1++;
+			MainMenuActivity.answer9++;
 		}
+
 		if (mQuestion.getResults().get(9).toString().equals("0")) {
-			MainMenuActivity.answer10_2++;
-		} else {
-			MainMenuActivity.answer10_1++;
-		}
+			MainMenuActivity.answer10++;
+		} 
 	}
 
 	private void activityFinish() {
@@ -238,39 +222,21 @@ public class SurveyFragment extends Fragment {
 		// String answer9 = mQuestion.getResults().get(8).toString();
 		// String answer10 = mQuestion.getResults().get(9).toString();
 
-		if ((MainMenuActivity.answer1_1 + MainMenuActivity.answer1_2) == 1) {
+		if ((MainMenuActivity.answer1 ) == 1) {
 			System.out.println("i need to add");
 			surveyDao.add(dateString, carId, driverName,
-					MainMenuActivity.answer1_1 + "", MainMenuActivity.answer1_2+ "",
-					MainMenuActivity.answer1_3 + "", MainMenuActivity.answer1_4+ "", 
-					MainMenuActivity.answer2_1 + "",MainMenuActivity.answer2_2 + "",
-					MainMenuActivity.answer3_1
-							+ "", MainMenuActivity.answer3_2 + "",
-					MainMenuActivity.answer4_1 + "", MainMenuActivity.answer4_2
-							+ "", MainMenuActivity.answer5_1 + "",
-					MainMenuActivity.answer5_2 + "", MainMenuActivity.answer6_1
-							+ "", MainMenuActivity.answer6_2 + "",
-					MainMenuActivity.answer7_1 + "", MainMenuActivity.answer7_2
-							+ "", MainMenuActivity.answer8_1 + "",
-					MainMenuActivity.answer8_2 + "", MainMenuActivity.answer9_1
-							+ "", MainMenuActivity.answer9_2 + "",
-					MainMenuActivity.answer10_1 + "",MainMenuActivity.answer10_2 + "");
+					MainMenuActivity.answer1 + "", MainMenuActivity.answer2 + "",
+					MainMenuActivity.answer3 + "",
+					MainMenuActivity.answer4 + "", MainMenuActivity.answer5 + "", MainMenuActivity.answer6 + "",
+					MainMenuActivity.answer7 + "", MainMenuActivity.answer8 + "", MainMenuActivity.answer9 + "",
+					MainMenuActivity.answer10 + "");
 		} else {
 			System.out.println("i need to update");
-			surveyDao.update(carId, MainMenuActivity.answer1_1 + "", MainMenuActivity.answer1_2+ "",
-					MainMenuActivity.answer1_3 + "", MainMenuActivity.answer1_4+ "", 
-					MainMenuActivity.answer2_1 + "",MainMenuActivity.answer2_2 + "",
-					MainMenuActivity.answer3_1
-							+ "", MainMenuActivity.answer3_2 + "",
-					MainMenuActivity.answer4_1 + "", MainMenuActivity.answer4_2
-							+ "", MainMenuActivity.answer5_1 + "",
-					MainMenuActivity.answer5_2 + "", MainMenuActivity.answer6_1
-							+ "", MainMenuActivity.answer6_2 + "",
-					MainMenuActivity.answer7_1 + "", MainMenuActivity.answer7_2
-							+ "", MainMenuActivity.answer8_1 + "",
-					MainMenuActivity.answer8_2 + "", MainMenuActivity.answer9_1
-							+ "", MainMenuActivity.answer9_2 + "",
-					MainMenuActivity.answer10_1 + "",MainMenuActivity.answer10_2 + "");
+			surveyDao.update(carId, MainMenuActivity.answer1 + "", MainMenuActivity.answer2 + "",
+					MainMenuActivity.answer3 + "",
+					MainMenuActivity.answer4 + "", MainMenuActivity.answer5 + "", MainMenuActivity.answer6 + "",
+					MainMenuActivity.answer7 + "", MainMenuActivity.answer8 + "", MainMenuActivity.answer9 + "",
+					MainMenuActivity.answer10 + "");
 		}
 
 	}

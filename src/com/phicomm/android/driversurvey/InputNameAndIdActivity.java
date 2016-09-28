@@ -5,6 +5,8 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -27,6 +29,13 @@ public class InputNameAndIdActivity extends Activity {
         ft.replace(android.R.id.content, fragment);
         ft.commit();
         
+    }
+    
+    
+    @Override
+    public void onBackPressed() {
+    	super.onBackPressed();
+			this.finish(); 
     }
 
 }

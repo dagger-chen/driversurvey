@@ -29,8 +29,7 @@ public class MonthSumDisplayActivity extends Activity {
 	private String driverName;
 	private String carId;
 	private String month;
-	private int[][] answerOneToNine = new int[9][2];
-	private int[] answerTen = new int[4];
+	private int[] answer = new int[10];
 	private HistogramView hv10_1, hv10_2, hv10_3, hv10_0;
 
 	@Override
@@ -123,51 +122,51 @@ public class MonthSumDisplayActivity extends Activity {
 				helper.writeSDFile("\r\n\r\n", fileName);
 				for (int i = 0; i < 9; i++) {
 					helper.writeSDFile("第" + (i + 1) + "题   是："
-							+ answerOneToNine[i][1] + "次，否："
-							+ answerOneToNine[i][0] + "次\r\n\r\n", fileName);
+							+ answer[i] + "次，否："
+							+ answer[i] + "次\r\n\r\n", fileName);
 				}
-				helper.writeSDFile("第10题   非常满意：" + answerTen[0] + "次\r\n\r\n",
+				helper.writeSDFile("第10题   非常满意：" + answer[9] + "次\r\n\r\n",
 						fileName);
-				helper.writeSDFile("第10题   满意：" + answerTen[1] + "次\r\n\r\n",
+				helper.writeSDFile("第10题   满意：" + answer[9] + "次\r\n\r\n",
 						fileName);
-				helper.writeSDFile("第10题   不满意：" + answerTen[2] + "次\r\n\r\n",
+				helper.writeSDFile("第10题   不满意：" + answer[9] + "次\r\n\r\n",
 						fileName);
 				helper.writeSDFile(
-						"第10题   非常不满意：" + answerTen[3] + "次\r\n\r\n", fileName);
+						"第10题   非常不满意：" + answer[9] + "次\r\n\r\n", fileName);
 
 			} else if ((!(driverName.equals(""))) && month.equals("")) {
 				helper.writeSDFile("姓名：" + driverName, fileName);
 				helper.writeSDFile("\r\n\r\n", fileName);
 				for (int i = 0; i < 9; i++) {
 					helper.writeSDFile("第" + (i + 1) + "题   是："
-							+ answerOneToNine[i][1] + "次，否："
-							+ answerOneToNine[i][0] + "次\r\n\r\n", fileName);
+							+ answer[i] + "次，否："
+							+ answer[i] + "次\r\n\r\n", fileName);
 				}
-				helper.writeSDFile("第10题   非常满意：" + answerTen[0] + "次\r\n\r\n",
+				helper.writeSDFile("第10题   非常满意：" + answer[9] + "次\r\n\r\n",
 						fileName);
-				helper.writeSDFile("第10题   满意：" + answerTen[1] + "次\r\n\r\n",
+				helper.writeSDFile("第10题   满意：" + answer[9] + "次\r\n\r\n",
 						fileName);
-				helper.writeSDFile("第10题   不满意：" + answerTen[2] + "次\r\n\r\n",
+				helper.writeSDFile("第10题   不满意：" + answer[9] + "次\r\n\r\n",
 						fileName);
 				helper.writeSDFile(
-						"第10题   非常不满意：" + answerTen[3] + "次\r\n\r\n", fileName);
+						"第10题   非常不满意：" + answer[9] + "次\r\n\r\n", fileName);
 			} else if ((!(driverName.equals(""))) && (!month.equals(""))) {
 				helper.writeSDFile("日期：" + month + "    姓名：" + driverName,
 						fileName);
 				helper.writeSDFile("\r\n\r\n", fileName);
 				for (int i = 0; i < 9; i++) {
 					helper.writeSDFile("第" + (i + 1) + "题   是："
-							+ answerOneToNine[i][1] + "次，否："
-							+ answerOneToNine[i][0] + "次\r\n\r\n", fileName);
+							+ answer[i] + "次，否："
+							+ answer[i] + "次\r\n\r\n", fileName);
 				}
-				helper.writeSDFile("第10题   非常满意：" + answerTen[0] + "次\r\n\r\n",
+				helper.writeSDFile("第10题   非常满意：" + answer[9] + "次\r\n\r\n",
 						fileName);
-				helper.writeSDFile("第10题   满意：" + answerTen[1] + "次\r\n\r\n",
+				helper.writeSDFile("第10题   满意：" + answer[9] + "次\r\n\r\n",
 						fileName);
-				helper.writeSDFile("第10题   不满意：" + answerTen[2] + "次\r\n\r\n",
+				helper.writeSDFile("第10题   不满意：" + answer[9] + "次\r\n\r\n",
 						fileName);
 				helper.writeSDFile(
-						"第10题   非常不满意：" + answerTen[3] + "次\r\n\r\n", fileName);
+						"第10题   非常不满意：" + answer[9] + "次\r\n\r\n", fileName);
 			}
 
 			return true;
@@ -234,28 +233,17 @@ public class MonthSumDisplayActivity extends Activity {
 	}
 
 	private void dataBaseToArray(Record record) {
-		answerOneToNine[0][0] += Integer.parseInt(record.getAnswer1_2());
-		answerOneToNine[0][1] += Integer.parseInt(record.getAnswer1_1());
-		answerOneToNine[1][0] += Integer.parseInt(record.getAnswer2_2());
-		answerOneToNine[1][1] += Integer.parseInt(record.getAnswer2_1());
-		answerOneToNine[2][0] += Integer.parseInt(record.getAnswer3_2());
-		answerOneToNine[2][1] += Integer.parseInt(record.getAnswer3_1());
-		answerOneToNine[3][0] += Integer.parseInt(record.getAnswer4_2());
-		answerOneToNine[3][1] += Integer.parseInt(record.getAnswer4_1());
-		answerOneToNine[4][0] += Integer.parseInt(record.getAnswer5_2());
-		answerOneToNine[4][1] += Integer.parseInt(record.getAnswer5_1());
-		answerOneToNine[5][0] += Integer.parseInt(record.getAnswer6_2());
-		answerOneToNine[5][1] += Integer.parseInt(record.getAnswer6_1());
-		answerOneToNine[6][0] += Integer.parseInt(record.getAnswer7_2());
-		answerOneToNine[6][1] += Integer.parseInt(record.getAnswer7_1());
-		answerOneToNine[7][0] += Integer.parseInt(record.getAnswer8_2());
-		answerOneToNine[7][1] += Integer.parseInt(record.getAnswer8_1());
-		answerOneToNine[8][0] += Integer.parseInt(record.getAnswer9_2());
-		answerOneToNine[8][1] += Integer.parseInt(record.getAnswer9_1());
-		answerTen[0] += Integer.parseInt(record.getAnswer10_1());
-		answerTen[1] += Integer.parseInt(record.getAnswer10_2());
-		answerTen[2] += Integer.parseInt(record.getAnswer10_3());
-		answerTen[3] += Integer.parseInt(record.getAnswer10_4());
+		answer[0] += Integer.parseInt(record.getAnswer1());
+		answer[1] += Integer.parseInt(record.getAnswer2());
+		answer[2] += Integer.parseInt(record.getAnswer3());
+		answer[3] += Integer.parseInt(record.getAnswer4());
+		answer[4] += Integer.parseInt(record.getAnswer5());
+		answer[5] += Integer.parseInt(record.getAnswer6());
+		answer[6] += Integer.parseInt(record.getAnswer7());
+		answer[7] += Integer.parseInt(record.getAnswer8());
+		answer[8] += Integer.parseInt(record.getAnswer9());
+		answer[9] += Integer.parseInt(record.getAnswer10());
+
 	}
 
 	class myAdapter extends BaseAdapter {
@@ -292,8 +280,7 @@ public class MonthSumDisplayActivity extends Activity {
 						.findViewById(R.id.hv_question1);
 				HistogramView hv1 = (HistogramView) view
 						.findViewById(R.id.hv_question1);
-				float progress = (float) answerOneToNine[position][1]
-						/ (answerOneToNine[position][1] + answerOneToNine[position][0]);
+				float progress = (float) answer[position];
 				hv1.setProgress(progress);
 				hv1.setRateBackgroundColorLeft("#ee8833");
 				hv1.setRateBackgroundColorRight("#3366cc");
@@ -315,11 +302,10 @@ public class MonthSumDisplayActivity extends Activity {
 						.findViewById(R.id.textview_answer1_monthSummary_title);
 
 				tv2.setText("第10题");
-				int sum = answerTen[0] + answerTen[1] + answerTen[2]
-						+ answerTen[3];
+				int sum = answer[9];
 				switch (position) {
 				case 9:
-					float progress0 = (float) answerTen[0] / sum;
+					float progress0 = (float) answer[9] / sum;
 					tv1.setText("非常满意：" + df.format(progress0 * 100) + "%");
 					HistogramView hv0 = (HistogramView) view
 							.findViewById(R.id.hv_question1);
@@ -328,7 +314,7 @@ public class MonthSumDisplayActivity extends Activity {
 					hv0.setRateBackgroundColorRight("#ffffff");
 					break;
 				case 10:
-					float progress1 = (float) answerTen[1] / sum;
+					float progress1 = (float) answer[9] / sum;
 					tv1.setText("满意：" + df.format(progress1 * 100) + "%");
 					HistogramView hv1 = (HistogramView) view
 							.findViewById(R.id.hv_question1);
@@ -337,7 +323,7 @@ public class MonthSumDisplayActivity extends Activity {
 					hv1.setRateBackgroundColorRight("#ffffff");
 					break;
 				case 11:
-					float progress2 = (float) answerTen[2] / sum;
+					float progress2 = (float) answer[9] / sum;
 					tv1.setText("不满意：" + df.format(progress2 * 100) + "%");
 					HistogramView hv2 = (HistogramView) view
 							.findViewById(R.id.hv_question1);
@@ -346,7 +332,7 @@ public class MonthSumDisplayActivity extends Activity {
 					hv2.setRateBackgroundColorRight("#ffffff");
 					break;
 				case 12:
-					float progress3 = (float) answerTen[3] / sum;
+					float progress3 = (float) answer[9] / sum;
 					tv1.setText("非常不满意：" + df.format(progress3 * 100) + "%");
 					HistogramView hv3 = (HistogramView) view
 							.findViewById(R.id.hv_question1);

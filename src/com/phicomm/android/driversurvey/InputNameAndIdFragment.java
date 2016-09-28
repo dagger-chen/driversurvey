@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -147,5 +148,5 @@ public class InputNameAndIdFragment extends Fragment {
 		// System.out.println(SurveyActivity.index);
 
 	}
-
+	
 }
