@@ -58,7 +58,7 @@ public class MainMenuActivity extends Activity {
 				Toast.makeText(MainMenuActivity.this, "此问卷已保存,谢谢！", Toast.LENGTH_LONG).show();
 				updateDatabase();
 //				dataRefresh();
-				//finish();
+				finish();
 				Intent intent = new Intent(MainMenuActivity.this, InputNameAndIdActivity.class);
 				startActivity(intent);
 			}

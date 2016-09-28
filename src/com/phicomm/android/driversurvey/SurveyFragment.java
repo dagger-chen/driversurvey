@@ -57,6 +57,7 @@ public class SurveyFragment extends Fragment {
 				// ft.replace(android.R.id.content, fragment);
 				// ft.commit();
 				if (SurveyActivity.index == 9) {
+					getActivity().finish();
 					Intent intent = new Intent(getActivity(),
 							MainMenuActivity.class);
 					intent.putExtra("carId", carId);
@@ -81,6 +82,7 @@ public class SurveyFragment extends Fragment {
 				mQuestion = Question.get(getActivity());
 				mQuestion.getResults().add(0);
 				if (SurveyActivity.index == 9) {
+					getActivity().finish();
 					Intent intent = new Intent(getActivity(),
 							MainMenuActivity.class);
 					intent.putExtra("carId", carId);

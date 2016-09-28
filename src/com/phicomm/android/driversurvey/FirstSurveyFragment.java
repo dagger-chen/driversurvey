@@ -60,6 +60,7 @@ public class FirstSurveyFragment extends Fragment {
 				// System.out.println(SurveyActivity.index);
 				mQuestion.getResults().add(0);
 				// updateDatabase();
+				getActivity().finish();
 				Intent intent = new Intent(getActivity(),
 						MainMenuActivity.class);
 				intent.putExtra("carId", carId);
@@ -75,6 +76,7 @@ public class FirstSurveyFragment extends Fragment {
 			public void onClick(View v) {
 				mQuestion.getResults().add(1);
 				SurveyActivity.index++;
+				//getActivity().finish();
 				callSurveyFragment();
 			}
 		});
@@ -85,6 +87,7 @@ public class FirstSurveyFragment extends Fragment {
 			public void onClick(View v) {
 				mQuestion.getResults().add(2);
 				SurveyActivity.index++;
+				//getActivity().finish();
 				callSurveyFragment();
 			}
 		});
@@ -99,6 +102,7 @@ public class FirstSurveyFragment extends Fragment {
 				//summitData();
 				//activityFinish();
 				SurveyActivity.index++;
+				//getActivity().finish();
 				callSurveyFragment();
 			}
 

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -36,6 +37,10 @@ public class InputNameAndIdActivity extends Activity {
     public void onBackPressed() {
     	super.onBackPressed();
 			this.finish(); 
+            Intent startMain = new Intent(Intent.ACTION_MAIN);  
+            startMain.addCategory(Intent.CATEGORY_HOME);  
+            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
+            startActivity(startMain); 
     }
 
 }
