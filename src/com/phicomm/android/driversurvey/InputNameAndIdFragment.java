@@ -104,7 +104,7 @@ public class InputNameAndIdFragment extends Fragment {
 				}
 
 				Intent intent = new Intent(getActivity(),
-						MainMenuActivity.class);
+						SurveyActivity.class);
 				intent.putExtra("carId", carId);
 				intent.putExtra("driverName", driverName);
 				startActivity(intent);

@@ -4,6 +4,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +15,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class LastSurveyFragment extends Fragment {
+public class FirstSurveyFragment extends Fragment {
 
 	private Question mQuestion;
 	private RadioButton radioButton0;
@@ -36,7 +39,7 @@ public class LastSurveyFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.fragment_last_survey, container,
+		View view = inflater.inflate(R.layout.fragment_first_survey, container,
 				false);
 
 		radioButton0 = (RadioButton) view
@@ -57,8 +60,11 @@ public class LastSurveyFragment extends Fragment {
 				// System.out.println(SurveyActivity.index);
 				mQuestion.getResults().add(0);
 				// updateDatabase();
-				summitData();
-				activityFinish();
+				Intent intent = new Intent(getActivity(),
+						MainMenuActivity.class);
+				intent.putExtra("carId", carId);
+				intent.putExtra("driverName", driverName);
+				startActivity(intent);
 			}
 
 		});
@@ -68,9 +74,8 @@ public class LastSurveyFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				mQuestion.getResults().add(1);
-				// updateDatabase();
-				summitData();
-				activityFinish();
+				SurveyActivity.index++;
+				callSurveyFragment();
 			}
 		});
 
@@ -79,9 +84,8 @@ public class LastSurveyFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				mQuestion.getResults().add(2);
-				// updateDatabase();
-				summitData();
-				activityFinish();
+				SurveyActivity.index++;
+				callSurveyFragment();
 			}
 		});
 
@@ -92,8 +96,10 @@ public class LastSurveyFragment extends Fragment {
 
 				mQuestion.getResults().add(3);
 				// updateDatabase();
-				summitData();
-				activityFinish();
+				//summitData();
+				//activityFinish();
+				SurveyActivity.index++;
+				callSurveyFragment();
 			}
 
 		});
@@ -104,16 +110,30 @@ public class LastSurveyFragment extends Fragment {
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		mQuestion.refresh();
-		SurveyActivity.index = 0;
+//		mQuestion.refresh();
+//		SurveyActivity.index = 0;
 	}
+
+	private void callSurveyFragment() {
+		Fragment fragment = new SurveyFragment();
+		// Question:why this getFragmentManager() work?
+		FragmentManager fm = getFragmentManager();
+		FragmentTransaction ft = fm.beginTransaction();
+		ft.replace(android.R.id.content, fragment);
+		ft.commit();
+	}	
 	
 	private void summitData() {
 		if (mQuestion.getResults().get(0).toString().equals("0")) {
-			MainMenuActivity.answer1_2++;
-		} else {
 			MainMenuActivity.answer1_1++;
+		} else if (mQuestion.getResults().get(0).toString().equals("1")) {
+			MainMenuActivity.answer1_2++;
+		} else if (mQuestion.getResults().get(0).toString().equals("2")) {
+			MainMenuActivity.answer1_3++;
+		} else if (mQuestion.getResults().get(0).toString().equals("3")) {
+			MainMenuActivity.answer1_4++;
 		}
+		
 		if (mQuestion.getResults().get(1).toString().equals("0")) {
 			MainMenuActivity.answer2_2++;
 		} else {
@@ -155,13 +175,9 @@ public class LastSurveyFragment extends Fragment {
 			MainMenuActivity.answer9_1++;
 		}
 		if (mQuestion.getResults().get(9).toString().equals("0")) {
-			MainMenuActivity.answer10_1++;
-		} else if (mQuestion.getResults().get(9).toString().equals("1")) {
 			MainMenuActivity.answer10_2++;
-		} else if (mQuestion.getResults().get(9).toString().equals("2")) {
-			MainMenuActivity.answer10_3++;
-		} else if (mQuestion.getResults().get(9).toString().equals("3")) {
-			MainMenuActivity.answer10_4++;
+		} else {
+			MainMenuActivity.answer10_1++;
 		}
 	}
 
@@ -207,9 +223,10 @@ public class LastSurveyFragment extends Fragment {
 		if ((MainMenuActivity.answer1_1 + MainMenuActivity.answer1_2) == 1) {
 			System.out.println("i need to add");
 			surveyDao.add(dateString, carId, driverName,
-					MainMenuActivity.answer1_1 + "", MainMenuActivity.answer1_2
-							+ "", MainMenuActivity.answer2_1 + "",
-					MainMenuActivity.answer2_2 + "", MainMenuActivity.answer3_1
+					MainMenuActivity.answer1_1 + "", MainMenuActivity.answer1_2+ "",
+					MainMenuActivity.answer1_3 + "", MainMenuActivity.answer1_4+ "", 
+					MainMenuActivity.answer2_1 + "",MainMenuActivity.answer2_2 + "",
+					MainMenuActivity.answer3_1
 							+ "", MainMenuActivity.answer3_2 + "",
 					MainMenuActivity.answer4_1 + "", MainMenuActivity.answer4_2
 							+ "", MainMenuActivity.answer5_1 + "",
@@ -219,28 +236,23 @@ public class LastSurveyFragment extends Fragment {
 							+ "", MainMenuActivity.answer8_1 + "",
 					MainMenuActivity.answer8_2 + "", MainMenuActivity.answer9_1
 							+ "", MainMenuActivity.answer9_2 + "",
-					MainMenuActivity.answer10_1 + "",
-					MainMenuActivity.answer10_2 + "",
-					MainMenuActivity.answer10_3 + "",
-					MainMenuActivity.answer10_4 + "");
+					MainMenuActivity.answer10_1 + "",MainMenuActivity.answer10_2 + "");
 		} else {
 			System.out.println("i need to update");
-			surveyDao.update(carId, MainMenuActivity.answer1_1 + "",
-					MainMenuActivity.answer1_2 + "", MainMenuActivity.answer2_1
-							+ "", MainMenuActivity.answer2_2 + "",
-					MainMenuActivity.answer3_1 + "", MainMenuActivity.answer3_2
-							+ "", MainMenuActivity.answer4_1 + "",
-					MainMenuActivity.answer4_2 + "", MainMenuActivity.answer5_1
-							+ "", MainMenuActivity.answer5_2 + "",
-					MainMenuActivity.answer6_1 + "", MainMenuActivity.answer6_2
-							+ "", MainMenuActivity.answer7_1 + "",
-					MainMenuActivity.answer7_2 + "", MainMenuActivity.answer8_1
-							+ "", MainMenuActivity.answer8_2 + "",
-					MainMenuActivity.answer9_1 + "", MainMenuActivity.answer9_2
-							+ "", MainMenuActivity.answer10_1 + "",
-					MainMenuActivity.answer10_2 + "",
-					MainMenuActivity.answer10_3 + "",
-					MainMenuActivity.answer10_4 + "");
+			surveyDao.update(carId, MainMenuActivity.answer1_1 + "", MainMenuActivity.answer1_2+ "",
+					MainMenuActivity.answer1_3 + "", MainMenuActivity.answer1_4+ "", 
+					MainMenuActivity.answer2_1 + "",MainMenuActivity.answer2_2 + "",
+					MainMenuActivity.answer3_1
+							+ "", MainMenuActivity.answer3_2 + "",
+					MainMenuActivity.answer4_1 + "", MainMenuActivity.answer4_2
+							+ "", MainMenuActivity.answer5_1 + "",
+					MainMenuActivity.answer5_2 + "", MainMenuActivity.answer6_1
+							+ "", MainMenuActivity.answer6_2 + "",
+					MainMenuActivity.answer7_1 + "", MainMenuActivity.answer7_2
+							+ "", MainMenuActivity.answer8_1 + "",
+					MainMenuActivity.answer8_2 + "", MainMenuActivity.answer9_1
+							+ "", MainMenuActivity.answer9_2 + "",
+					MainMenuActivity.answer10_1 + "",MainMenuActivity.answer10_2 + "");
 		}
 
 	}

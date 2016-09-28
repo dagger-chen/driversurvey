@@ -12,7 +12,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:text="@string/last_survey_text"
+        android:text="@string/first_survey_text"
         android:textSize="18sp" />
 
     <RadioGroup

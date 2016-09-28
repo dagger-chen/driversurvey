@@ -5,17 +5,36 @@
     android:gravity="center"
     android:orientation="vertical" >
 
-    <Button
-        style="@style/button_normal"
-        android:id="@+id/button_menu_main_survey"
-        android:text="@string/button_new_sruvey" 
-        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:editable="false"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@null"
+        android:hint="@string/end_page_tine"/>
+        
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
+        <Button
+            android:id="@+id/button_menu_main_survey"
+            style="@style/button_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="95dp"
+            android:layout_weight="1"
+            android:text="@string/button_new_sruvey" />
 
+        <Button
+            android:id="@+id/button_menu_done"
+            style="@style/button_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="95dp"
+            android:layout_weight="1"
+            android:text="@string/button_menu_done" />
 
-    <Button
-        style="@style/button_normal"
-        android:id="@+id/button_menu_done"
-        android:text="@string/button_menu_done" />
+    </LinearLayout>
 
 </LinearLayout>

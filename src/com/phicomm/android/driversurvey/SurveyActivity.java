@@ -23,7 +23,7 @@ public class SurveyActivity extends Activity {
 		mQuestion = Question.get(getApplicationContext());
 		mQuestion.refresh();
 		
-		Fragment fragment = new SruveyFragment();
+		Fragment fragment = new FirstSurveyFragment();
 
 		FragmentManager fm = getFragmentManager();
 		FragmentTransaction ft = fm.beginTransaction();

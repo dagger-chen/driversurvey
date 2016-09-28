@@ -49,8 +49,11 @@ public class ThisTableSummaryActivity extends Activity {
 	}
 
 	private void setText() {
-		textViewAnswer1.setText("司机的问题一统计结果为：“是”" + MainMenuActivity.answer1_1
-				+ "次，“否”" + MainMenuActivity.answer1_2 + "次");
+		textViewAnswer1.setText("司机的问题十统计结果为：“非常满意”"
+				+ MainMenuActivity.answer1_1 + "次，“满意”"
+				+ MainMenuActivity.answer1_2 + "次，“不满意”"
+				+ MainMenuActivity.answer1_3 + "次，“非常不满意”"
+				+ MainMenuActivity.answer1_4 + "次");
 		textViewAnswer2.setText("司机的问题二统计结果为：“是”" + MainMenuActivity.answer2_1
 				+ "次，“否”" + MainMenuActivity.answer2_2 + "次");
 		textViewAnswer3.setText("司机的问题三统计结果为：“是”" + MainMenuActivity.answer3_1
@@ -67,11 +70,8 @@ public class ThisTableSummaryActivity extends Activity {
 				+ "次，“否”" + MainMenuActivity.answer8_2 + "次");
 		textViewAnswer9.setText("司机的问题九统计结果为：“是”" + MainMenuActivity.answer9_1
 				+ "次，“否”" + MainMenuActivity.answer9_2 + "次");
-		textViewAnswer10.setText("司机的问题十统计结果为：“非常满意”"
-				+ MainMenuActivity.answer10_1 + "次，“满意”"
-				+ MainMenuActivity.answer10_2 + "次，“不满意”"
-				+ MainMenuActivity.answer10_3 + "次，“非常不满意”"
-				+ MainMenuActivity.answer10_4 + "次");
+		textViewAnswer10.setText("司机的问题九统计结果为：“是”" + MainMenuActivity.answer10_1
+				+ "次，“否”" + MainMenuActivity.answer10_2 + "次");
 	}
 
 

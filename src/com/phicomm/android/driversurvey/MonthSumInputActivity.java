@@ -3,7 +3,7 @@ package com.phicomm.android.driversurvey;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import com.phicomm.library.phidatetimenumberpicker.PhiDatePicker;
+//import com.phicomm.library.phidatetimenumberpicker.PhiDatePicker;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -70,14 +70,14 @@ public class MonthSumInputActivity extends Activity {
 //									}, year, monthOfYear, dayOfMonth).show();
 							
 							//引用libary工程里的自定义PhiDatePicker控件
-							final PhiDatePicker datePicker = new PhiDatePicker(MonthSumInputActivity.this);
+							final DatePicker datePicker = new DatePicker(MonthSumInputActivity.this);
 							AlertDialog.Builder builder = new AlertDialog.Builder(MonthSumInputActivity.this);
 							builder.setView(datePicker);
 							builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 								
 								@Override
 								public void onClick(DialogInterface dialog, int which) {
-									editTextMonth.setText(datePicker.getDate());
+									editTextMonth.setText((int) datePicker.getMaxDate());
 								}
 							});
 							builder.show();

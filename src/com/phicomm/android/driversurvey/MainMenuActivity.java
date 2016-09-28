@@ -10,10 +10,10 @@ import android.widget.Button;
 
 public class MainMenuActivity extends Activity {
 
-	public static int answer1_1, answer1_2, answer2_1, answer2_2, answer3_1,
+	public static int answer1_1, answer1_2, answer1_3, answer1_4, answer2_1, answer2_2, answer3_1,
 			answer3_2, answer4_1, answer4_2, answer5_1, answer5_2, answer6_1,
 			answer6_2, answer7_1, answer7_2, answer8_1, answer8_2, answer9_1,
-			answer9_2, answer10_1, answer10_2, answer10_3, answer10_4;
+			answer9_2, answer10_1, answer10_2;
 
 	private Question mQuestion;
 	private Button buttonNew;
@@ -41,6 +41,8 @@ public class MainMenuActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				mQuestion.refresh();
+				SurveyActivity.index = 0;
 				Intent intent = new Intent(MainMenuActivity.this,
 						SurveyActivity.class);
 				intent.putExtra("carId", carId);
@@ -54,8 +56,8 @@ public class MainMenuActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-//				updateDatabase();
-				dataRefresh();
+				updateDatabase();
+//				dataRefresh();
 				finish();
 			}
 		});
@@ -71,6 +73,8 @@ public class MainMenuActivity extends Activity {
 	private void dataRefresh() {
 		answer1_1 = 0;
 		answer1_2 = 0;
+		answer1_3 = 0;
+		answer1_4 = 0;
 		answer2_1 = 0;
 		answer2_2 = 0;
 		answer3_1 = 0;
@@ -89,8 +93,6 @@ public class MainMenuActivity extends Activity {
 		answer9_2 = 0;
 		answer10_1 = 0;
 		answer10_2 = 0;
-		answer10_3 = 0;
-		answer10_4 = 0;
 	}
 
 	private void updateDatabase() {
@@ -122,12 +124,11 @@ public class MainMenuActivity extends Activity {
 		// String answer10 = mQuestion.getResults().get(9).toString();
 
 		surveyDao.add(dateString, carId, driverName, answer1_1 + "", answer1_2
-				+ "", answer2_1 + "", answer2_2 + "", answer3_1 + "", answer3_2
+				+ "",answer1_3 + "", answer1_4 + "", answer2_1 + "", answer2_2 + "", answer3_1 + "", answer3_2
 				+ "", answer4_1 + "", answer4_2 + "", answer5_1 + "", answer5_2
 				+ "", answer6_1 + "", answer6_2 + "", answer7_1 + "", answer7_2
 				+ "", answer8_1 + "", answer8_2 + "", answer9_1 + "", answer9_2
-				+ "", answer10_1 + "", answer10_2 + "", answer10_3 + "",
-				answer10_4 + "");
+				+ "", answer10_1 + "", answer10_2 + "");
 
 	}
 }
