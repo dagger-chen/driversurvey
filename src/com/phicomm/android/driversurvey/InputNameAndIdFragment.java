@@ -124,6 +124,11 @@ public class InputNameAndIdFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
+		case R.id.menu_maim_check_summarize_upload:
+			Intent intent_upload = new Intent(getActivity(),
+					MonthSumInputActivity.class);
+			startActivity(intent_upload);
+			return true;
 		case R.id.menu_maim_check_summarize:
 			Intent intent = new Intent(getActivity(),
 					MonthSumInputActivity.class);

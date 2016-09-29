@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
+    
+    <item android:id="@+id/menu_maim_check_summarize_upload"
+        android:icon="@android:drawable/ic_menu_upload"
+        android:title="@string/menu_main_upload"
+        android:showAsAction="ifRoom|withText"
+        />
     <item android:id="@+id/menu_maim_check_summarize"
         android:icon="@android:drawable/ic_menu_search"
         android:title="@string/menu_main_check"
