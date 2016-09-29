@@ -54,54 +54,54 @@ public class MonthSumInputActivity extends Activity {
 					@Override
 					public void onFocusChange(View v, boolean hasFocus) {
 						if (hasFocus) {
-//							System.out.println("EditText On Click");
-//							new DatePickerDialog(MonthSumInputActivity.this,
-//									new DatePickerDialog.OnDateSetListener() {
-// 
-//										@Override
-//										public void onDateSet(DatePicker view,
-//												int year, int monthOfYear,
-//												int dayOfMonth) {
-//											int monthOfYear1 = monthOfYear + 1;
-//											editTextMonth.setText(year + "-"
-//													+ monthOfYear1 + "-"
-//													+ dayOfMonth);
-//										}
-//									}, year, monthOfYear, dayOfMonth).show();
+							System.out.println("EditText On Click");
+							new DatePickerDialog(MonthSumInputActivity.this,
+									new DatePickerDialog.OnDateSetListener() {
+ 
+										@Override
+										public void onDateSet(DatePicker view,
+												int year, int monthOfYear,
+												int dayOfMonth) {
+											int monthOfYear1 = monthOfYear + 1;
+											editTextMonth.setText(year + "-"
+													+ monthOfYear1 + "-"
+													+ dayOfMonth);
+										}
+									}, year, monthOfYear, dayOfMonth).show();
 							
 							//引用libary工程里的自定义PhiDatePicker控件
-							final DatePicker datePicker = new DatePicker(MonthSumInputActivity.this);
-							AlertDialog.Builder builder = new AlertDialog.Builder(MonthSumInputActivity.this);
-							builder.setView(datePicker);
-							builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-								
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-									editTextMonth.setText(Integer.toString(datePicker.getMonth()));
-								}
-							});
-							builder.show();
+//							final DatePicker datePicker = new DatePicker(MonthSumInputActivity.this);
+//							AlertDialog.Builder builder = new AlertDialog.Builder(MonthSumInputActivity.this);
+//							builder.setView(datePicker);
+//							builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//								
+//								@Override
+//								public void onClick(DialogInterface dialog, int which) {
+//									editTextMonth.setText(Integer.toString(datePicker.getMonth()));
+//								}
+//							});
+//							builder.show();
 						}
 					}
 				});
 
-//		editTextMonth.setOnClickListener(new View.OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				System.out.println("EditText On Click");
-//				new DatePickerDialog(MonthSumInputActivity.this,
-//						new DatePickerDialog.OnDateSetListener() {
-//
-//							@Override
-//							public void onDateSet(DatePicker view, int year,
-//									int monthOfYear, int dayOfMonth) {
-//								int monthOfYear1 = monthOfYear + 1;
-//								editTextMonth.setText(year + "-" + monthOfYear1
-//										+ "-" + dayOfMonth);
-//							}
-//						}, year, monthOfYear, dayOfMonth).show();
-//			}
-//		});
+		editTextMonth.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				System.out.println("EditText On Click");
+				new DatePickerDialog(MonthSumInputActivity.this,
+						new DatePickerDialog.OnDateSetListener() {
+
+							@Override
+							public void onDateSet(DatePicker view, int year,
+									int monthOfYear, int dayOfMonth) {
+								int monthOfYear1 = monthOfYear + 1;
+								editTextMonth.setText(year + "-" + monthOfYear1
+										+ "-" + dayOfMonth);
+							}
+						}, year, monthOfYear, dayOfMonth).show();
+			}
+		});
 
 		buttonDone.setOnClickListener(new View.OnClickListener() {
 

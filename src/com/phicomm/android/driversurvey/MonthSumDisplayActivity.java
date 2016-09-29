@@ -74,9 +74,9 @@ public class MonthSumDisplayActivity extends Activity {
 			records = (ArrayList<Record>) dao.findByDriverName(driverName);
 			// textViewInfo.setText("该司机该月记录为：");
 			recordeSize = records.size();
-			getActionBar().setTitle(driverName + "该月记录");
+			//getActionBar().setTitle("司机："+driverName + "该月记录");
 			String[] str = month.split("-");
-			textView_info.setText("月份：" + str[0] + "-" + str[1]);
+			textView_info.setText("月份：" + str[0] + "-" + str[1] + "司机："+driverName);
 		}
 
 		// 数据库数据汇总到数组中
