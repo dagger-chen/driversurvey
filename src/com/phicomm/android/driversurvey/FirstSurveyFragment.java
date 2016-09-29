@@ -58,7 +58,7 @@ public class FirstSurveyFragment extends Fragment {
 				// System.out.println("RadioButton1 onclick");
 
 				// System.out.println(SurveyActivity.index);
-				mQuestion.getResults().add(0);
+				mQuestion.getResults().add(5);
 				// updateDatabase();
 				getActivity().finish();
 				Intent intent = new Intent(getActivity(),
@@ -74,7 +74,7 @@ public class FirstSurveyFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				mQuestion.getResults().add(1);
+				mQuestion.getResults().add(4);
 				SurveyActivity.index++;
 				//getActivity().finish();
 				callSurveyFragment();
@@ -97,7 +97,7 @@ public class FirstSurveyFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 
-				mQuestion.getResults().add(3);
+				mQuestion.getResults().add(0);
 				// updateDatabase();
 				//summitData();
 				//activityFinish();

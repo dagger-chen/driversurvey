@@ -30,7 +30,7 @@ public class MonthSumDisplayActivity extends Activity {
 	private String carId;
 	private String month;
 	private int[] answer = new int[10];
-	private HistogramView hv10_1, hv10_2, hv10_3, hv10_0;
+	private int recordeSize = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,18 +59,21 @@ public class MonthSumDisplayActivity extends Activity {
 			driverName = dao.findNameById(carId);
 			textView_info.setText("单号：" + carId + "    司机姓名：" + driverName);
 			records = (ArrayList<Record>) dao.findById(carId);
+			recordeSize = records.size();
 
 		} else if ((!(driverName.equals(""))) && month.equals("")) {
 			// textViewInfo.setText("该司机历史记录为：");
 			// get the result list finding by driverName
 			getActionBar().setTitle("该司机历史记录");
-			textView_info.setText("司机姓名：" + driverName);
 			records = (ArrayList<Record>) dao.findByDriverName(driverName);
+			recordeSize = records.size();
+			textView_info.setText("司机姓名：" + driverName + "  单数：" + records.size());
 		} else if ((!(driverName.equals(""))) && (!month.equals(""))) {
 			// get the result list finding by driverName
 			// choose by date in summarizeRecords()
 			records = (ArrayList<Record>) dao.findByDriverName(driverName);
 			// textViewInfo.setText("该司机该月记录为：");
+			recordeSize = records.size();
 			getActionBar().setTitle(driverName + "该月记录");
 			String[] str = month.split("-");
 			textView_info.setText("月份：" + str[0] + "-" + str[1]);
@@ -250,7 +253,7 @@ public class MonthSumDisplayActivity extends Activity {
 
 		@Override
 		public int getCount() {
-			return 13;
+			return 10;
 		}
 
 		@Override
@@ -266,7 +269,7 @@ public class MonthSumDisplayActivity extends Activity {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 
-			if (position < 9) {
+			//if ((position>=1) && (position < 10)) {
 				View view = View.inflate(MonthSumDisplayActivity.this,
 						R.layout.summarize_item, null);
 				TextView tv1 = (TextView) view
@@ -280,7 +283,11 @@ public class MonthSumDisplayActivity extends Activity {
 						.findViewById(R.id.hv_question1);
 				HistogramView hv1 = (HistogramView) view
 						.findViewById(R.id.hv_question1);
-				float progress = (float) answer[position];
+				float progress = (float) answer[position]/recordeSize;
+				if(position == 0){
+					progress /= 5;
+					
+				}
 				hv1.setProgress(progress);
 				hv1.setRateBackgroundColorLeft("#ee8833");
 				hv1.setRateBackgroundColorRight("#3366cc");
@@ -288,64 +295,42 @@ public class MonthSumDisplayActivity extends Activity {
 				DecimalFormat df = new DecimalFormat("#0.00");
 
 				tv2.setText("第" + (position + 1) + "题");
-				tv1.setText("是：" + df.format(progress * 100) + "%");
-				tv3.setText(df.format(100 - progress * 100) + "%" + ":否");
-
-				return view;
-			} else {
-				DecimalFormat df = new DecimalFormat("#0.00");
-				View view = View.inflate(MonthSumDisplayActivity.this,
-						R.layout.summarize_item, null);
-				TextView tv1 = (TextView) view
-						.findViewById(R.id.textview_answer1_monthSummary_yes);
-				TextView tv2 = (TextView) view
-						.findViewById(R.id.textview_answer1_monthSummary_title);
-
-				tv2.setText("第10题");
-				int sum = answer[9];
-				switch (position) {
-				case 9:
-					float progress0 = (float) answer[9] / sum;
-					tv1.setText("非常满意：" + df.format(progress0 * 100) + "%");
-					HistogramView hv0 = (HistogramView) view
-							.findViewById(R.id.hv_question1);
-					hv0.setProgress(progress0);
-					hv0.setRateBackgroundColorLeft("#ee8833");
-					hv0.setRateBackgroundColorRight("#ffffff");
-					break;
-				case 10:
-					float progress1 = (float) answer[9] / sum;
-					tv1.setText("满意：" + df.format(progress1 * 100) + "%");
-					HistogramView hv1 = (HistogramView) view
-							.findViewById(R.id.hv_question1);
-					hv1.setProgress(progress1);
-					hv1.setRateBackgroundColorLeft("#ee8833");
-					hv1.setRateBackgroundColorRight("#ffffff");
-					break;
-				case 11:
-					float progress2 = (float) answer[9] / sum;
-					tv1.setText("不满意：" + df.format(progress2 * 100) + "%");
-					HistogramView hv2 = (HistogramView) view
-							.findViewById(R.id.hv_question1);
-					hv2.setProgress(progress2);
-					hv2.setRateBackgroundColorLeft("#ee8833");
-					hv2.setRateBackgroundColorRight("#ffffff");
-					break;
-				case 12:
-					float progress3 = (float) answer[9] / sum;
-					tv1.setText("非常不满意：" + df.format(progress3 * 100) + "%");
-					HistogramView hv3 = (HistogramView) view
-							.findViewById(R.id.hv_question1);
-					hv3.setProgress(progress3);
-					hv3.setRateBackgroundColorLeft("#ee8833");
-					hv3.setRateBackgroundColorRight("#ffffff");
-					break;
-
-				default:
-					break;
+				tv1.setText("是： " + df.format(progress * 100) + "%");
+				tv3.setText(df.format(100 - progress * 100) + "%" + "  :否");
+				
+				if (position == 0){
+					
+					tv2.setText("第" + (position + 1) + "题");
+					tv1.setText("满意度：" + df.format(progress * 100) + "%");
+					tv3.setText(df.format(100 - progress * 100) + "%" + ":不满意度");
 				}
+				
+
 				return view;
-			}
+			//} 
+//			else {
+//				DecimalFormat df = new DecimalFormat("#0.00");
+//				View view = View.inflate(MonthSumDisplayActivity.this,
+//						R.layout.summarize_item, null);
+//				TextView tv1 = (TextView) view
+//						.findViewById(R.id.textview_answer1_monthSummary_yes);
+//				TextView tv2 = (TextView) view
+//						.findViewById(R.id.textview_answer1_monthSummary_title);
+//				TextView tv3 = (TextView) view
+//						.findViewById(R.id.textview_answer1_monthSummary_no);
+//
+//				tv2.setText("第1题");
+//				tv3.setText("否");
+//				int sum = answer[0];
+//				float progress0 = (float) answer[0] / sum;
+//				tv1.setText("满意度：" + df.format(progress0 * 100) + "%");
+//				HistogramView hv0 = (HistogramView) view
+//						.findViewById(R.id.hv_question1);
+//				hv0.setProgress(progress0);
+//				hv0.setRateBackgroundColorLeft("#ee8833");
+//				hv0.setRateBackgroundColorRight("#ffffff");
+//				return view;
+//			}
 
 		}
 

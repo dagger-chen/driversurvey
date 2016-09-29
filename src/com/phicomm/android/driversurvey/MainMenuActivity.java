@@ -105,7 +105,7 @@ public class MainMenuActivity extends Activity {
 
 		String dateString = "" + year + "-" + month + "-" + day;
 		 String answer1 = mQuestion.getResults().get(0).toString();
-		 if(answer1 == Integer.toString(0)){
+		 if(answer1 == Integer.toString(5)){
 			 mQuestion.getResults().add(1);
 			 SurveyActivity.index++;
 			 mQuestion.getResults().add(1);

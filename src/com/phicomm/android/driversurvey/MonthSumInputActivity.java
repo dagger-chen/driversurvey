@@ -77,7 +77,7 @@ public class MonthSumInputActivity extends Activity {
 								
 								@Override
 								public void onClick(DialogInterface dialog, int which) {
-									editTextMonth.setText((int) datePicker.getMaxDate());
+									editTextMonth.setText(Integer.toString(datePicker.getMonth()));
 								}
 							});
 							builder.show();
