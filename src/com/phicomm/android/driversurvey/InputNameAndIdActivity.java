@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,7 +24,8 @@ public class InputNameAndIdActivity extends Activity {
         
         getActionBar().setDisplayShowHomeEnabled(false);
         
-        Fragment fragment = new InputNameAndIdFragment();
+        Context context = this.getApplicationContext();
+        Fragment fragment = new InputNameAndIdFragment(context);
         
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
