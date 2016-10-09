@@ -249,7 +249,7 @@ public class InputNameAndIdFragment extends Fragment {
 		 
 		  xml.startTag(null, "carOrderIDSum");
 		  for(int id =0; id < records.size(); id++){
-			  xml.startTag(null, "carOrderIDSum"+id);
+			  xml.startTag(null, "carOrderID");
 		      xml.startTag(null, "date");
 		      xml.text(records.get(id).getDate());
 		      xml.endTag(null, "date");
@@ -301,7 +301,7 @@ public class InputNameAndIdFragment extends Fragment {
 		      xml.startTag(null, "answer10");
 		      xml.text(records.get(id).getAnswer10());
 		      xml.endTag(null, "answer10");
-		      xml.endTag(null, "carOrderIDSum"+id);
+		      xml.endTag(null, "carOrderID");
 		  }
 		  xml.endTag(null, "carOrderIDSum");
 		  xml.endDocument();

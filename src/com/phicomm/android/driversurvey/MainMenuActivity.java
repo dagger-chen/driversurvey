@@ -116,7 +116,7 @@ public class MainMenuActivity extends Activity {
 			 SurveyActivity.index++;
 			 mQuestion.getResults().add(1);
 			 SurveyActivity.index++;
-			 mQuestion.getResults().add(1);
+			 mQuestion.getResults().add(0);
 			 SurveyActivity.index++;
 			 mQuestion.getResults().add(1);
 			 SurveyActivity.index++;

@@ -105,7 +105,7 @@ public class MonthSumDisplayActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.menu_display_export:
-			Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "±£´æ³É¹¦", Toast.LENGTH_SHORT).show();
 
 			FileExportHelper helper = new FileExportHelper(this);
 
