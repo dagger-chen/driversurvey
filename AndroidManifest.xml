@@ -18,26 +18,33 @@
         android:label="@string/app_name"
         android:persistent="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".InputNameAndIdActivity" >
+        <activity android:name=".InputNameAndIdActivity"
+                  android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="SurveyActivity" >
+        <activity android:name="SurveyActivity"
+                  android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="MainMenuActivity" >
+        <activity android:name="MainMenuActivity"
+                  android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="MonthSummaryActivity" >
+        <activity android:name="MonthSummaryActivity"
+                  android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="MonthSumInputActivity" >
+        <activity android:name="MonthSumInputActivity"
+                  android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="MonthSumDisplayActivity" >
+        <activity android:name="MonthSumDisplayActivity"
+                  android:screenOrientation="portrait" >
         </activity>
     </application>
 
