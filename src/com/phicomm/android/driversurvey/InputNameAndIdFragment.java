@@ -195,7 +195,7 @@ public class InputNameAndIdFragment extends Fragment {
 		InputStream inputStream=this.getClass().getClassLoader().getResourceAsStream("test.xml");
 //		byte[] xml = CreateXMLDoc().getBytes();
 		
-		String path = "http://192.168.1.100:8080/first/getDate.jsp";
+		String path = "http://192.168.1.100:8080/XingZhenApp/UpdateServlet";
 		URL url = new URL(path);
 		
 //		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
