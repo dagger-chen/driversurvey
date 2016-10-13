@@ -3,7 +3,7 @@ package com.phicomm.android.driversurvey;
 public class RecordAll {
 
 	private String date, carId, driverName, answer1, answer2, answer3, answer4, answer5, answer6, 
-	answer7, answer8, answer9, answer10;
+	answer7;
 
 	public String getDate() {
 		return date;
@@ -77,35 +77,10 @@ public class RecordAll {
 		this.answer7 = answer7;
 	}
 
-	public String getAnswer8() {
-		return answer8;
-	}
-
-	public void setAnswer8(String answer8) {
-		this.answer8 = answer8;
-	}
-
-
-	public String getAnswer9() {
-		return answer9;
-	}
-
-	public void setAnswer9(String answer9) {
-		this.answer9 = answer9;
-	}
-
-	public String getAnswer10() {
-		return answer10;
-	}
-
-	public void setAnswer10(String answer10) {
-		this.answer10 = answer10;
-	}
 
 	public RecordAll(String date, String carId, String driverName, String answer1,
 			String answer2, String answer3, String answer4,
-			String answer5, String answer6, String answer7,
-			String answer8, String answer9, String answer10) {
+			String answer5, String answer6, String answer7) {
 		super();
 		this.date = date;
 		this.carId = carId;
@@ -117,9 +92,6 @@ public class RecordAll {
 		this.answer5 = answer5;
 		this.answer6 = answer6;
 		this.answer7 = answer7;
-		this.answer8 = answer8;
-		this.answer9 = answer9;
-		this.answer10 = answer10;
 
 	}
 

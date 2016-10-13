@@ -49,14 +49,14 @@ public class SurveyFragment extends Fragment {
 				// System.out.println("RadioButton1 onclick");
 				// System.out.println(SurveyActivity.index);
 				mQuestion = Question.get(getActivity());
-				mQuestion.getResults().add(1);
+				mQuestion.getResults().add("ÊÇ");
 				// Fragment fragment = new MainFragment();
 				// //Question:why this getFragmentManager() work?
 				// FragmentManager fm = getFragmentManager();
 				// FragmentTransaction ft = fm.beginTransaction();
 				// ft.replace(android.R.id.content, fragment);
 				// ft.commit();
-				if (SurveyActivity.index == 9) {
+				if (SurveyActivity.index == 6) {
 					getActivity().finish();
 					Intent intent = new Intent(getActivity(),
 							MainMenuActivity.class);
@@ -80,8 +80,8 @@ public class SurveyFragment extends Fragment {
 				// System.out.println("RadioButton1 onclick");
 				// System.out.println(SurveyActivity.index);
 				mQuestion = Question.get(getActivity());
-				mQuestion.getResults().add(0);
-				if (SurveyActivity.index == 9) {
+				mQuestion.getResults().add("·ñ");
+				if (SurveyActivity.index == 6) {
 					getActivity().finish();
 					Intent intent = new Intent(getActivity(),
 							MainMenuActivity.class);
@@ -122,16 +122,6 @@ public class SurveyFragment extends Fragment {
 		case 6:
 			mTextView.setText((SurveyActivity.index+1)+"."+Question.QUESTION_SEVEN);
 			break;
-		case 7:
-			mTextView.setText((SurveyActivity.index+1)+"."+Question.QUESTION_EIGHT);
-			break;
-		case 8:
-			mTextView.setText((SurveyActivity.index+1)+"."+Question.QUESTION_NINE);
-		case 9:
-			mTextView.setText((SurveyActivity.index+1)+"."+Question.QUESTION_TEN);
-
-			// showResults();
-			break;
 
 		default:
 			break;
@@ -144,45 +134,34 @@ public class SurveyFragment extends Fragment {
 	}
 	
 	private void summitData() {
-		if (mQuestion.getResults().get(0).toString().equals("0")) {
+		if (mQuestion.getResults().get(0).equals("·ñ")) {
 			MainMenuActivity.answer1++;
 		} 
 		
-		if (mQuestion.getResults().get(1).toString().equals("0")) {
+		if (mQuestion.getResults().get(1).equals("·ñ")) {
 			MainMenuActivity.answer2++;
 		}
 		
-		if (mQuestion.getResults().get(2).toString().equals("0")) {
+		if (mQuestion.getResults().get(2).equals("·ñ")) {
 			MainMenuActivity.answer3++;
 		} 
 		
-		if (mQuestion.getResults().get(3).toString().equals("0")) {
+		if (mQuestion.getResults().get(3).equals("·ñ")) {
 			MainMenuActivity.answer4++;
 		} 
 		
-		if (mQuestion.getResults().get(4).toString().equals("0")) {
+		if (mQuestion.getResults().get(4).equals("·ñ")) {
 			MainMenuActivity.answer5++;
 		}
 		
-		if (mQuestion.getResults().get(5).toString().equals("0")) {
+		if (mQuestion.getResults().get(5).equals("·ñ")) {
 			MainMenuActivity.answer6++;
 		} 
 		
-		if (mQuestion.getResults().get(6).toString().equals("0")) {
+		if (mQuestion.getResults().get(6).equals("·ñ")) {
 			MainMenuActivity.answer7++;
 		}
 		
-		if (mQuestion.getResults().get(7).toString().equals("0")) {
-			MainMenuActivity.answer8++;
-		}
-		
-		if (mQuestion.getResults().get(8).toString().equals("0")) {
-			MainMenuActivity.answer9++;
-		}
-
-		if (mQuestion.getResults().get(9).toString().equals("0")) {
-			MainMenuActivity.answer10++;
-		} 
 	}
 
 	private void activityFinish() {
@@ -230,15 +209,13 @@ public class SurveyFragment extends Fragment {
 					MainMenuActivity.answer1 + "", MainMenuActivity.answer2 + "",
 					MainMenuActivity.answer3 + "",
 					MainMenuActivity.answer4 + "", MainMenuActivity.answer5 + "", MainMenuActivity.answer6 + "",
-					MainMenuActivity.answer7 + "", MainMenuActivity.answer8 + "", MainMenuActivity.answer9 + "",
-					MainMenuActivity.answer10 + "");
+					MainMenuActivity.answer7 + "");
 		} else {
 			System.out.println("i need to update");
 			surveyDao.update(carId, MainMenuActivity.answer1 + "", MainMenuActivity.answer2 + "",
 					MainMenuActivity.answer3 + "",
 					MainMenuActivity.answer4 + "", MainMenuActivity.answer5 + "", MainMenuActivity.answer6 + "",
-					MainMenuActivity.answer7 + "", MainMenuActivity.answer8 + "", MainMenuActivity.answer9 + "",
-					MainMenuActivity.answer10 + "");
+					MainMenuActivity.answer7 + "");
 		}
 
 	}

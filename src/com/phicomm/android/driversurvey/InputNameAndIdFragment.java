@@ -132,7 +132,11 @@ public class InputNameAndIdFragment extends Fragment {
 					Toast.makeText(getActivity(), "信息不能为空", Toast.LENGTH_SHORT)
 							.show();
 					return;
-				} else {
+				} else if(carEditText.getText().toString().length() != 7){
+					Toast.makeText(getActivity(), "单号不为7", Toast.LENGTH_SHORT)
+					.show();
+					return;
+				}else{
 					SurveyDao dao = new SurveyDao(getActivity());
 					ArrayList records = (ArrayList) dao.findById(carId);
 					if (records.size() != 0) {
@@ -141,7 +145,7 @@ public class InputNameAndIdFragment extends Fragment {
 						return;
 					}
 				}
-
+				
 				Intent intent = new Intent(getActivity(),
 						SurveyActivity.class);
 				intent.putExtra("carId", carId);
@@ -165,11 +169,11 @@ public class InputNameAndIdFragment extends Fragment {
 		case R.id.menu_maim_check_summarize_upload:
 			new Thread(runnable).start();
 			return true;
-		case R.id.menu_maim_check_summarize:
-			Intent intent = new Intent(getActivity(),
-					MonthSumInputActivity.class);
-			startActivity(intent);
-			return true;
+//		case R.id.menu_maim_check_summarize:
+//			Intent intent = new Intent(getActivity(),
+//					MonthSumInputActivity.class);
+//			startActivity(intent);
+//			return true;
 
 		default:
 			return super.onOptionsItemSelected(item);
@@ -195,7 +199,7 @@ public class InputNameAndIdFragment extends Fragment {
 		InputStream inputStream=this.getClass().getClassLoader().getResourceAsStream("test.xml");
 //		byte[] xml = CreateXMLDoc().getBytes();
 		
-		String path = "http://192.168.1.100:8080/XingZhenApp/UpdateServlet";
+		String path = "http://192.168.1.102:8080/XingZhenApp/UpdateServlet";
 		URL url = new URL(path);
 		
 //		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -290,17 +294,6 @@ public class InputNameAndIdFragment extends Fragment {
 		      xml.text(records.get(id).getAnswer7());
 		      xml.endTag(null, "answer7");
 		      
-		      xml.startTag(null, "answer8");
-		      xml.text(records.get(id).getAnswer8());
-		      xml.endTag(null, "answer8");
-		      
-		      xml.startTag(null, "answer9");
-		      xml.text(records.get(id).getAnswer9());
-		      xml.endTag(null, "answer9");
-		      
-		      xml.startTag(null, "answer10");
-		      xml.text(records.get(id).getAnswer10());
-		      xml.endTag(null, "answer10");
 		      xml.endTag(null, "carOrderID");
 		  }
 		  xml.endTag(null, "carOrderIDSum");
@@ -333,15 +326,8 @@ public class InputNameAndIdFragment extends Fragment {
 					.getColumnIndex("answer6"));
 			String answer7 = cursor.getString(cursor
 					.getColumnIndex("answer7"));
-			String answer8 = cursor.getString(cursor
-					.getColumnIndex("answer8"));
-			String answer9 = cursor.getString(cursor
-					.getColumnIndex("answer9"));
-			String answer10 = cursor.getString(cursor
-					.getColumnIndex("answer10"));
 			RecordAll recordAll = new RecordAll(date, carId, driverName, answer1, answer2, answer3, answer4,
-					answer5, answer6, answer7, answer8, answer9,
-					answer10);
+					answer5, answer6, answer7);
 			records.add(recordAll);
 		}
 		return records;

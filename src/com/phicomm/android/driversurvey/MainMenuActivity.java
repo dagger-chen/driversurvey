@@ -81,9 +81,6 @@ public class MainMenuActivity extends Activity {
 		answer5 = 0;
 		answer6 = 0;
 		answer7 = 0;
-		answer8 = 0;
-		answer9 = 0;
-		answer10 = 0;
 
 	}
 
@@ -104,43 +101,34 @@ public class MainMenuActivity extends Activity {
 		mQuestion = Question.get(this);
 
 		String dateString = "" + year + "-" + month + "-" + day;
-		 String answer1 = mQuestion.getResults().get(0).toString();
-		 if(answer1 == Integer.toString(5)){
-			 mQuestion.getResults().add(1);
+		 String answer1 = mQuestion.getResults().get(0);
+		 if(answer1.equals("ÂúÒâ")){
+			 mQuestion.getResults().add("·ñ");
 			 SurveyActivity.index++;
-			 mQuestion.getResults().add(1);
+			 mQuestion.getResults().add("·ñ");
 			 SurveyActivity.index++;
-			 mQuestion.getResults().add(1);
+			 mQuestion.getResults().add("·ñ");
 			 SurveyActivity.index++;
-			 mQuestion.getResults().add(1);
+			 mQuestion.getResults().add("·ñ");
 			 SurveyActivity.index++;
-			 mQuestion.getResults().add(1);
+			 mQuestion.getResults().add("·ñ");
 			 SurveyActivity.index++;
-			 mQuestion.getResults().add(0);
-			 SurveyActivity.index++;
-			 mQuestion.getResults().add(1);
-			 SurveyActivity.index++;
-			 mQuestion.getResults().add(1);
-			 SurveyActivity.index++;
-			 mQuestion.getResults().add(1);
+			 mQuestion.getResults().add("·ñ");
 			 SurveyActivity.index++;			 
 		 }
-		 String answer2 = mQuestion.getResults().get(1).toString();
-		 String answer3 = mQuestion.getResults().get(2).toString();
-		 String answer4 = mQuestion.getResults().get(3).toString();
-		 String answer5 = mQuestion.getResults().get(4).toString();
-		 String answer6 = mQuestion.getResults().get(5).toString();
-		 String answer7 = mQuestion.getResults().get(6).toString();
-		 String answer8 = mQuestion.getResults().get(7).toString();
-		 String answer9 = mQuestion.getResults().get(8).toString();
-		 String answer10 = mQuestion.getResults().get(9).toString();
+		 String answer2 = mQuestion.getResults().get(1);
+		 String answer3 = mQuestion.getResults().get(2);
+		 String answer4 = mQuestion.getResults().get(3);
+		 String answer5 = mQuestion.getResults().get(4);
+		 String answer6 = mQuestion.getResults().get(5);
+		 String answer7 = mQuestion.getResults().get(6);
+
 
 		surveyDao.add(dateString, carId, driverName, answer1
 				+ "", answer2 + "", answer3
 				+ "", answer4 + "", answer5
 				+ "", answer6 + "", answer7
-				+ "", answer8 + "", answer9
-				+ "", answer10 + "");
+				+ "");
 
 	}
 }

@@ -23,17 +23,9 @@
         android:padding="10dp" >
 
         <RadioButton
-            android:id="@+id/radioButton_survey_last_excellent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/radiobutton_select_shape"
-            android:text="@string/excellent" />
-
-        <RadioButton
             android:id="@+id/radioButton_survey_last_good"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:background="@drawable/radiobutton_select_shape"
             android:text="@string/good" />
 
@@ -44,14 +36,7 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/radiobutton_select_shape"
             android:text="@string/bad" />
-
-        <RadioButton
-            android:id="@+id/radioButton_survey_last_poor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/radiobutton_select_shape"
-            android:text="@string/poor" />
+        
     </RadioGroup>
 
     <!-- <Button -->

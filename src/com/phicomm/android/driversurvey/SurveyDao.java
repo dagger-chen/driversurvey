@@ -18,8 +18,7 @@ public class SurveyDao {
 	public void add(String date, String carId, String driverName,
 			String answer1, String answer2, String answer3,
 			String answer4, String answer5, String answer6,
-			String answer7, String answer8, String answer9,
-			String answer10) {
+			String answer7) {
 		
 		System.out.println("SurveyDao add");
 		
@@ -28,27 +27,24 @@ public class SurveyDao {
 		db.execSQL(
 				"insert into survey (date,carId,driverName,answer1,answer2,"
 						+ "answer3,answer4,answer5,"
-						+ "answer6,answer7,answer8,answer9,"
-						+ "answer10"
-						+ ") values (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+						+ "answer6,answer7"
+						+ ") values (?,?,?,?,?,?,?,?,?,?)",
 				new Object[] { date, carId, driverName, answer1,
 						answer2, answer3, answer4, answer5, answer6,
-						answer7, answer8, answer9, answer10 });
+						answer7});
 
 		db.close();
 	}
 
 	public void update(String carId, String answer1,
 			String answer2, String answer3, String answer4,
-			String answer5, String answer6, String answer7,
-			String answer8, String answer9, String answer10) {
+			String answer5, String answer6, String answer7) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 
 		db.execSQL(
-				"update survey set answer1=?,answer2=?,answer3=?,answer4=?,answer5=?,answer6=?,answer7=?,answer8=?,answer9=?,answer10=? where carId =?",
+				"update survey set answer1=?,answer2=?,answer3=?,answer4=?,answer5=?,answer6=?,answer7=? where carId =?",
 				new Object[] { answer1, answer2,
-						answer3, answer4, answer5, answer6, answer7,
-						answer8, answer9, answer10, carId });
+						answer3, answer4, answer5, answer6, answer7, carId });
 
 		db.close();
 	}
@@ -100,15 +96,8 @@ public class SurveyDao {
 					.getColumnIndex("answer6"));
 			String answer7 = cursor.getString(cursor
 					.getColumnIndex("answer7"));
-			String answer8 = cursor.getString(cursor
-					.getColumnIndex("answer8"));
-			String answer9 = cursor.getString(cursor
-					.getColumnIndex("answer9"));
-			String answer10 = cursor.getString(cursor
-					.getColumnIndex("answer10"));
 			Record record = new Record(date, answer1, answer2, answer3, answer4,
-					answer5, answer6, answer7, answer8, answer9,
-					answer10);
+					answer5, answer6, answer7);
 			records.add(record);
 		}
 		return records;

@@ -6,10 +6,10 @@
         android:title="@string/menu_main_upload"
         android:showAsAction="ifRoom|withText"
         />
-    <item android:id="@+id/menu_maim_check_summarize"
+    <!--  item android:id="@+id/menu_maim_check_summarize"
         android:icon="@android:drawable/ic_menu_search"
         android:title="@string/menu_main_check"
         android:showAsAction="ifRoom|withText"
-        />
+        /-->
 
 </menu>

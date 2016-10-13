@@ -29,7 +29,7 @@ public class MonthSumDisplayActivity extends Activity {
 	private String driverName;
 	private String carId;
 	private String month;
-	private int[] answer = new int[10];
+	private String[] answer = new String[7];
 	private int recordeSize = 0;
 
 	@Override
@@ -236,16 +236,13 @@ public class MonthSumDisplayActivity extends Activity {
 	}
 
 	private void dataBaseToArray(Record record) {
-		answer[0] += Integer.parseInt(record.getAnswer1());
-		answer[1] += Integer.parseInt(record.getAnswer2());
-		answer[2] += Integer.parseInt(record.getAnswer3());
-		answer[3] += Integer.parseInt(record.getAnswer4());
-		answer[4] += Integer.parseInt(record.getAnswer5());
-		answer[5] += Integer.parseInt(record.getAnswer6());
-		answer[6] += Integer.parseInt(record.getAnswer7());
-		answer[7] += Integer.parseInt(record.getAnswer8());
-		answer[8] += Integer.parseInt(record.getAnswer9());
-		answer[9] += Integer.parseInt(record.getAnswer10());
+		answer[0] += record.getAnswer1();
+		answer[1] += record.getAnswer2();
+		answer[2] += record.getAnswer3();
+		answer[3] += record.getAnswer4();
+		answer[4] += record.getAnswer5();
+		answer[5] += record.getAnswer6();
+		answer[6] += record.getAnswer7();
 
 	}
 
@@ -283,11 +280,7 @@ public class MonthSumDisplayActivity extends Activity {
 						.findViewById(R.id.hv_question1);
 				HistogramView hv1 = (HistogramView) view
 						.findViewById(R.id.hv_question1);
-				float progress = (float) answer[position]/recordeSize;
-				if(position == 0){
-					progress /= 5;
-					
-				}
+				float progress = 100;
 				hv1.setProgress(progress);
 				hv1.setRateBackgroundColorLeft("#ee8833");
 				hv1.setRateBackgroundColorRight("#3366cc");
