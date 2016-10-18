@@ -113,7 +113,7 @@ public class MainMenuActivity extends Activity {
 			 SurveyActivity.index++;
 			 mQuestion.getResults().add("·ñ");
 			 SurveyActivity.index++;
-			 mQuestion.getResults().add("·ñ");
+			 mQuestion.getResults().add(" ");
 			 SurveyActivity.index++;			 
 		 }
 		 String answer2 = mQuestion.getResults().get(1);

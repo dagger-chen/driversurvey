@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <CheckBox
+        android:id="@+id/question2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:checked="false"
+        android:textSize="23sp"
+        android:text="车辆未提前抵到预定发车地点" >
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/question3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:textSize="23sp"
+        android:text="未提醒您系好安全带" >
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/question4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:textSize="23sp"
+        android:text="车内环境卫生不满意" >
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/question5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:textSize="23sp"
+        android:text="驾驶员服务态度差" >
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/question6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:textSize="23sp"
+        android:text="驾驶员未使用蓝牙耳机接打电话" >
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/question7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:textSize="23sp"
+        android:text="其他 " >
+    </CheckBox>
+
+    <EditText
+        android:id="@+id/questioncomment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/question_comment" />
+
+    <Button
+        android:id="@+id/button_question_comfirm"
+        style="@style/button_normal"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:text="@string/button_comfirm" />
+
+</LinearLayout>

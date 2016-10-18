@@ -74,7 +74,12 @@ public class FirstSurveyFragment extends Fragment {
 				mQuestion.getResults().add("²»ÂúÒâ");
 				SurveyActivity.index++;
 				//getActivity().finish();
-				callSurveyFragment();
+				//callSurveyFragment();
+				Intent intent = new Intent(getActivity(),
+						QuestionViewActivity.class);
+				intent.putExtra("carId", carId);
+				intent.putExtra("driverName", driverName);
+				startActivity(intent);
 			}
 		});
 

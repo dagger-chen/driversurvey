@@ -13,7 +13,7 @@
     <string name="good">满意</string>
     <string name="bad">不满意</string>
     <string name="poor">非常不满意</string>
-    <string name="first_survey_text">1.您对驾驶员的综合评价？</string>
+    <string name="first_survey_text">请您对本次用车做出评价？</string>
     <string name="button_survey_done">结束调查</string>
     <string name="toast_survey_done">问卷填写完毕，感谢您的配合！</string>
     <string name="button_new_sruvey">重新填写问卷</string>
@@ -28,5 +28,7 @@
     <string name="button_export_info">导出数据</string>
     <string name="menu_display_export">导出数据</string>
     <string name="end_page_tine">请直接结束此单填写按钮结束本次评价，如果你想重新对司机进行评价，请点击重新填写问卷。非常感谢您对我们工作的支持！</string>
+    <string name="question_comment">请输入(不超过40个汉字)...</string>
+    <string name="button_comfirm">确定</string>
 
 </resources>

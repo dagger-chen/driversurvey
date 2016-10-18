@@ -46,6 +46,9 @@
         <activity android:name="MonthSumDisplayActivity"
                   android:screenOrientation="portrait" >
         </activity>
+        <activity android:name="QuestionViewActivity"
+                  android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>
